@@ -1,12 +1,6 @@
 import React from "react";
-import InstaProfile from "./pages/home"
+import HomePage from "./pages/home";
 
-function App() {
-  return (
-    <div className="App">
-      <home />
-    </div>
-  );
+export default function App() {
+  return <HomePage />;
 }
-
-export default App;
