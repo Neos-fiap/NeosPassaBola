@@ -1,10 +1,10 @@
 import React from "react";
-import InstaProfile from "./pages/talk"
+import InstaProfile from "./pages/home"
 
 function App() {
   return (
     <div className="App">
-      <InstaProfile />
+      <home />
     </div>
   );
 }
