@@ -4,20 +4,20 @@ export default function MessagesPage() {
   const [conversations] = useState([
     {
       id: 1,
-      username: "ana_clara",
-      lastMessage: "Oi, tudo bem?",
+      username: "Olheiro do Sport",
+      lastMessage: "Oi, tudo bem?, vi suas melhores jogadas gostaria de fazer um treino teste com você na base junior",
       time: "2h",
     },
     {
       id: 2,
-      username: "joao.dev",
-      lastMessage: "Manda o link do projeto",
+      username: "Empresario:Jonas",
+      lastMessage: "Você tem futuro gostaria de te empresariar",
       time: "5h",
     },
     {
       id: 3,
-      username: "maria.design",
-      lastMessage: "Gostei do layout 👏",
+      username: "Marta ROdriguez",
+      lastMessage: "Amei seu god de bicicleta",
       time: "1d",
     },
   ]);
