@@ -1,3 +1,10 @@
+import { Link } from "react-router-dom";
+import iconeAdd from "../assets/imagem_icone_semfundo_add.png";
+import iconeNotif from "../assets/icone_notificacao.png";
+import profiGolPerna from "../assets/profi_gol_perna.png";
+import garinhasVitoria from "../assets/garinhas_vitoria.png";
+import garotinhaGolFalta from "../assets/garotinha_gol_falta.png";
+
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gray-600">
@@ -6,6 +13,9 @@ export default function HomePage() {
         <div className="max-w-full mx-auto px-4 py-2 flex items-center justify-between bg-gray-600 ">
           {/* Logo */}
           <div className=" font-sans text-2xl font-bold text-purple-400">NeosPass</div>
+            <button>
+              .
+            </button>
 
           {/* Search */}
           <div className="hidden md:flex flex-1 mx-6">
@@ -16,14 +26,16 @@ export default function HomePage() {
             />
           </div>
 
-          {/* Menu (simples sem libs) */}
+          {/* Menu */}
           <div className="flex items-center space-x-5 text-lg ">
-            <button className="font-sans font-bold text-purple-400 hover:text-blue-500">Conecte-se</button>
-            <button className="hover:text-blue-500 "></button>
-              <img src="src/assets/imagem_icone_semfundo_add.png" className="h-9 w-9" alt="foto icone" />
-            <button className="hover:text-blue-500 "></button>
-               <img src="src/assets/icone_notificacao.png" className="h-9 w-9" alt="foto icone" />
-            
+            <Link
+              to="/login"
+              className="font-sans font-bold text-purple-400 hover:text-blue-500"
+            >
+              Conecte-se
+            </Link>
+            <img src={iconeAdd} className="h-9 w-9" alt="foto icone" />
+            <img src={iconeNotif} className="h-9 w-9" alt="foto icone" />
           </div>
         </div>
       </nav>
@@ -32,7 +44,7 @@ export default function HomePage() {
       <main className="pt-20 max-w-6xl mx-auto px-4">
         <div className="bg-white rounded-2xl shadow p-4 mb-6 bg-gray-300">
           <div className="flex items-center space-x-3">
-            <img src="src/assets/profi_gol_perna.png" className="w-10 h-10 rounded-full background" alt="fotojogadora" />
+            <img src={profiGolPerna} className="w-10 h-10 rounded-full background" alt="fotojogadora" />
             <div>
               <p className="font-sans font-semibold">Maria Alencar</p>
               <p className="font-sans text-xs text-gray-500">30min atrás</p>
@@ -43,7 +55,7 @@ export default function HomePage() {
           </p>
           <div className="mt-3 rounded-lg overflow-hidden">
             <img
-              src="src/assets/garinhas_vitoria.png"
+              src={garinhasVitoria}
               alt="Post"
               className="w-full"
             />
@@ -55,10 +67,10 @@ export default function HomePage() {
           </div>
         </div>
       </main>
-    <main className="pt-20 max-w-6xl mx-auto px-4">
+      <main className="pt-20 max-w-6xl mx-auto px-4">
         <div className="bg-white rounded-2xl shadow p-4 mb-6">
           <div className="flex items-center space-x-3">
-            <img src="src/assets/profi_gol_perna.png" className="w-10 h-10 rounded-full background" alt="fotojogadora" />
+            <img src={profiGolPerna} className="w-10 h-10 rounded-full background" alt="fotojogadora" />
             <div>
               <p className=" font-sans font-semibold">Maria Alencar</p>
               <p className="font-sans text-xs text-gray-500">2h atrás</p>
@@ -69,7 +81,7 @@ export default function HomePage() {
           </p>
           <div className="mt-3 rounded-lg overflow-hidden h-240">
             <img
-              src="src/assets/garotinha_gol_falta.png"
+              src={garotinhaGolFalta}
               alt="Post"
               className="w-full"
             />
