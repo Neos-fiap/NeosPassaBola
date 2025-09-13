@@ -4,6 +4,7 @@ import iconeNotif from "../assets/icone_notificacao.png";
 import profiGolPerna from "../assets/profi_gol_perna.png";
 import garinhasVitoria from "../assets/garinhas_vitoria.png";
 import garotinhaGolFalta from "../assets/garotinha_gol_falta.png";
+import iconeChat from "../assets/icone_conversa.png";
 
 export default function HomePage() {
   return (
@@ -35,7 +36,7 @@ export default function HomePage() {
               Conecte-se
             </Link>
             <img src={iconeAdd} className="h-9 w-9" alt="foto icone" />
-            <img src={iconeNotif} className="h-9 w-9" alt="foto icone" />
+            <img src={iconeChat} className="h-9 w-9" alt="foto icone" />
           </div>
         </div>
       </nav>
