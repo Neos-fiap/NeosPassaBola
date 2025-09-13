@@ -3,7 +3,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-gray-600">
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full bg-white border-b border-purple-400 shadow-sm z-50">
-        <div className="max-w-full mx-auto px-4 py-2 flex items-center justify-between bg-gray-600">
+        <div className="max-w-full mx-auto px-4 py-2 flex items-center justify-between bg-gray-600 ">
           {/* Logo */}
           <div className=" font-sans text-2xl font-bold text-purple-400">NeosPass</div>
 
