@@ -1,23 +1,24 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function MessagesPage() {
   const [conversations] = useState([
     {
       id: 1,
-      username: "Olheiro do Sport",
-      lastMessage: "Oi, tudo bem?, vi suas melhores jogadas gostaria de fazer um treino teste com você na base junior",
+      username: "OlheiroKaizer",
+      lastMessage: "Oi, tudo bem?, vi suas melhores jogadas e gostaria de fazer um treino teste com você na base junior do Corinthians",
       time: "2h",
     },
     {
       id: 2,
-      username: "Empresario:Jonas",
-      lastMessage: "Você tem futuro gostaria de te empresariar",
+      username: "JonasEmpresario01",
+      lastMessage: "Você tem futuro, gostaria de te empresariar",
       time: "5h",
     },
     {
       id: 3,
-      username: "Marta ROdriguez",
-      lastMessage: "Amei seu god de bicicleta",
+      username: "MartaRodriguezJogadora",
+      lastMessage: "Amei seu gol de bicicleta! você joga bem!",
       time: "1d",
     },
   ]);
