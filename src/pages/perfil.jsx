@@ -1,38 +1,53 @@
+import { Link } from "react-router-dom";
+import profiGolPerna from "../assets/profi_gol_perna.png";
+import rafaControleBola from "../assets/imagem_rafa_controle_bola.png";
+// filepath: /Users/nicholasbraga/NeosPassaBola/src/pages/perfil.jsx
+
 export default function InstaProfile({ user = null }) {
+
   const sample = {
-    name: "Joana Silva",
-    username: "joana.s",
-    avatarAlt: "Avatar de Joana",
+    name: "Rafaela Almeida",
+    username: "Rafa.Almeida8",
+    avatarAlt: "Avatar de Rafa",
     bio: "Jogadora da escolinha do Sport Recife 15 Anos",
-    website: "https://example.com",
+    website: "https://example.com", 
     posts: 128,
     followers: "24.3k",
     following: 312,
-    highlights: ["Viagem", "Pets", "Comida"],
+    highlights: ["Viagem", "Pets", "Futebol"],
     grid: Array.from({ length: 9 }).map((_, i) => ({ id: i + 1 }))
   };
 
   const u = user || sample;
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-start justify-center p-6">
-      <div className="w-full max-w-4xl bg-white rounded-2xl shadow-md p-6">
+    <div className="min-h-screen bg-gray-600 flex items-start justify-center p-6 relative font-sans text-gray-100">
+      {/* Seta para voltar */}
+      <Link
+        to="/"
+        className="absolute top-8 left-8 bg-white rounded-full shadow p-2 hover:bg-gray-200 transition"
+        title="Voltar para Home"
+      >
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <path d="M15 6l-6 6 6 6" stroke="#6B21A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </Link>
+      <div className="w-full max-w-4xl bg-gray-400 rounded-2xl shadow-md p-6">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center md:gap-8">
           <div className="flex items-center gap-6">
-            <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden bg-gray-200 flex-shrink-0">
-              {/* Placeholder avatar */}
-              <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="24" height="24" rx="6" fill="#E5E7EB" />
-                <circle cx="12" cy="9" r="3" fill="#D1D5DB" />
-                <path d="M4 20c0-3.5 4.5-6 8-6s8 2.5 8 6" fill="#D1D5DB" />
-              </svg>
-            </div>
+           <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden bg-gray-200 flex-shrink-0">
+         <img
+            src={profiGolPerna}
+            alt={u.avatarAlt}
+            className="w-full h-full object-cover"
+          />
+          </div>
             <div>
               <div className="flex items-center gap-3">
                 <h1 className="text-2xl font-semibold">{u.username}</h1>
-                <button className="px-3 py-1 rounded-md border text-sm font-medium">Seguir</button>
-                <button className="p-1 rounded-md border text-sm">⋯</button>
+                <button className="px-3 py-1 rounded-md border text-sm font-medium bg-purple-400">Seguir</button>
+                <button className="p-1 rounded-md border text-sm bg-purple-400">⋯</button>
               </div>
               <div className="mt-3 flex gap-6 text-sm">
                 <div><span className="font-semibold">{u.posts}</span> posts</div>
@@ -51,7 +66,7 @@ export default function InstaProfile({ user = null }) {
             {u.website && (
               <a
                 href={u.website}
-                className="block mt-2 text-sm text-blue-600 truncate"
+                className="block mt-2 text-sm text-purple-600 truncate"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -80,7 +95,7 @@ export default function InstaProfile({ user = null }) {
             </div>
             <div className="flex items-center gap-2 opacity-60">
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4v16" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
-              Reels
+
             </div>
             <div className="flex items-center gap-2 opacity-60">
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.2"/></svg>
@@ -93,7 +108,7 @@ export default function InstaProfile({ user = null }) {
         <div className="mt-4 grid grid-cols-3 gap-1">
           {u.grid.map(item => (
             <div key={item.id} className="w-full pb-full relative bg-gray-100">
-              <div className="absolute inset-0 flex items-center justify-center text-sm text-gray-400">Imagem {item.id}</div>
+              <div className="absolute inset-0 flex items-center justify-center text-sm text-gray-400">Post {item.id}</div>
             </div>
           ))}
         </div>

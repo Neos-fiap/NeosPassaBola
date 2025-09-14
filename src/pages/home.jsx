@@ -48,7 +48,7 @@ export default function HomePage() {
       <main className="pt-20 max-w-6xl mx-auto px-4">
         <div className="bg-white rounded-2xl shadow p-4 mb-6 bg-gray-300">
           <div className="flex items-center space-x-3">
-            <img src={profiGolPerna} className="w-10 h-10 rounded-full background" alt="fotojogadora" />
+            <img src={garotinhaGolFalta} className="w-10 h-10 rounded-full background" alt="fotojogadora" />
             <div>
               <p className="font-sans font-semibold">Maria Alencar</p>
               <p className="font-sans text-xs text-gray-500">30min atrás</p>
