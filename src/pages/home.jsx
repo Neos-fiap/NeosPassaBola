@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import iconeAdd from "../assets/imagem_icone_semfundo_add.png";
-import iconeNotif from "../assets/icone_notificacao.png";
 import profiGolPerna from "../assets/profi_gol_perna.png";
 import garinhasVitoria from "../assets/garinhas_vitoria.png";
 import garotinhaGolFalta from "../assets/garotinha_gol_falta.png";
@@ -35,8 +34,12 @@ export default function HomePage() {
             >
               Conecte-se
             </Link>
+          <Link to="/perfil">
             <img src={iconeAdd} className="h-9 w-9" alt="foto icone" />
+          </Link>
+          <Link to="/talk">
             <img src={iconeChat} className="h-9 w-9" alt="foto icone" />
+            </Link>
           </div>
         </div>
       </nav>
