@@ -112,7 +112,6 @@ export default function InstaProfile({ user = null }) {
             </div>
           ))}
         </div>
-
         <style>{`.pb-full{padding-bottom:100%;}`}</style>
       </div>
     </div>

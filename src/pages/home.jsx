@@ -7,7 +7,7 @@ import iconeChat from "../assets/icone_conversa.png";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gray-600">
+    <div className="h-max bg-gray-600">
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full bg-white border-b border-purple-400 shadow-sm z-50">
         <div className="max-w-full mx-auto px-4 py-2 flex items-center justify-between bg-gray-600 ">
@@ -96,6 +96,9 @@ export default function HomePage() {
             <button>🔗</button>
           </div>
         </div>
+<footer className="w-full bg-gray-600 text-center py-4 mt-10 text-gray-100">
+  © 2025 NeosPassaBola. Todos os direitos reservados.
+</footer>
       </main>
     </div>
   );
