@@ -78,7 +78,7 @@ export default function HomePage() {
         {/* Post 2 */}
         <div className="bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
           <div className="flex items-center gap-4 px-6 py-4">
-            <img src={profiGolPerna} className="w-12 h-12 rounded-full border-2 border-purple-400" alt="fotojogadora" />
+            <img src={garotinhaGolFalta} className="w-12 h-12 rounded-full border-2 border-purple-400" alt="fotojogadora" />
             <div>
               <p className="font-bold text-purple-300">Maria Alencar</p>
               <p className="text-xs text-gray-400">2h atrás</p>
