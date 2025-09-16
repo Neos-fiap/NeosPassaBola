@@ -26,8 +26,19 @@ const LoginPage = () => {
     <div className="min-h-screen bg-gray-700 flex flex-col font-sans">
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full bg-gray-800 border-b border-purple-500 shadow-lg z-50">
-        <div className="max-w-2xl mx-auto px-6 py-3 flex items-center justify-between justify-center">
+        <div className="max-w-2xl mx-auto px-6 py-3 flex items-center justify-between">
+          {/* Seta para voltar */}
+          <Link
+            to="/"
+            className="bg-white rounded-full shadow p-2 hover:bg-gray-200 transition "
+            title="Voltar para Home"
+          >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path d="M15 6l-6 6 6 6" stroke="#6B21A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </Link>
           <span className="text-3xl font-extrabold text-purple-400 tracking-tight justify-center">NeosPass</span>
+          <div />
         </div>
       </nav>
 
