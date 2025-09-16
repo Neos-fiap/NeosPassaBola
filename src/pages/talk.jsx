@@ -28,105 +28,113 @@ export default function MessagesPage() {
   const [input, setInput] = useState("");
 
   return (
-    <div className="min-h-screen bg-gray-100 flex font-sans text-white">
-      {/* Sidebar - Lista de conversas */}
-      <div className="w-1/3 border-r bg-gray-600">
-        <div className="p-4 border-b font-semibold text-lg text-white">Mensagens</div>
-        <ul className="divide-y">
-          {conversations.map((c) => (
-            <li
-              key={c.id}
-              onClick={() => setSelected(c)}
-              className={`p-4 cursor-pointer hover:bg-gray-50 ${
-                selected?.id === c.id ? "bg-gray-600" : ""
-              }`}
-            >
-              <div className="font-medium">{c.username}</div>
-              <div className="text-sm text-gray-400 truncate">
-                {c.lastMessage}
-              </div>
-              <div className="text-xs text-gray-400 mt-1 text-purple-300">{c.time}</div>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div className="min-h-screen bg-gray-700 flex flex-col font-sans">
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 w-full bg-gray-800 border-b border-purple-500 shadow-lg z-50">
+        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+          <Link
+            to="/"
+            className="bg-white rounded-full shadow p-2 hover:bg-gray-200 transition"
+            title="Voltar para Home"
+          >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path d="M15 6l-6 6 6 6" stroke="#6B21A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </Link>
+          <span className="text-3xl font-extrabold text-purple-400 tracking-tight">NeosPass</span>
+          <span className="text-xs bg-purple-400 text-white px-2 py-0.5 rounded-full ml-2">Mensagens</span>
+        </div>
+      </nav>
 
-      {/* Main - Janela de chat */}
-      <div className="flex-1 flex flex-col relative">
-        {/* Seta para voltar para Home */}
-        <Link
-          to="/"
-          className="absolute top-4 left-4 bg-white rounded-full shadow p-2 hover:bg-gray-200 transition"
-          title="Voltar para Home"
-        >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <path d="M15 6l-6 6 6 6" stroke="#6B21A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </Link>
-        {selected ? (
-          <>
-           <div className="flex items-center justify-between p-4.5 border-b bg-gray-600">
-  <Link
-    to="/"
-    className="bg-white rounded-full shadow p-2 hover:bg-gray-200 transition"
-    title="Voltar para Home"
-    style={{ position: "relative", left: 0 }}
-  >
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-      <path d="M15 6l-6 6 6 6" stroke="#6B21A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-  </Link>
-  <span className="font-medium text-lg text-white ml-auto">{selected.username}</span>
-</div>
-            
-            <div className="flex-1 p-4 space-y-3 overflow-y-auto bg-gray-600">
-              <div className="self-start bg-gray-400 px-3 py-2 rounded-lg text-sm w-max">
-                {selected.lastMessage}
-              </div>
-              {messages.map((msg, idx) => (
-                <div
-                  key={idx}
-                  className={`flex ${msg.fromUser ? "justify-end" : "justify-start"}`}
-                >
-                  <div
-                    className={`${
-                      msg.fromUser
-                        ? "bg-purple-500 text-white self-end"
-                        : "bg-gray-400 self-start"
-                    } px-3 py-2 rounded-lg text-sm w-max`}
-                  >
-                    {msg.text}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="p-3 border-t flex gap-2 bg-gray-600">
-              <input
-                type="text"
-                placeholder="Escreva uma mensagem..."
-                className="flex-1 border rounded-full px-4 py-2 text-sm focus:outline-none bg-gray-500"
-                value={input}
-                onChange={e => setInput(e.target.value)}
-              />
-              <button
-                className="px-4 py-2 bg-purple-500 text-white rounded-full text-sm"
-                onClick={() => {
-                  if (input.trim()) {
-                    setMessages([...messages, { text: input, fromUser: true }]);
-                    setInput("");
-                  }
-                }}
+      {/* Main Content */}
+      <main className="flex-1 flex pt-24 pb-10 max-w-7xl mx-auto w-full">
+        {/* Sidebar - Lista de conversas */}
+        <aside className="w-1/3 bg-gray-800 rounded-l-2xl shadow-lg flex flex-col">
+          <div className="p-6 border-b border-purple-500 font-bold text-lg text-purple-300">Conversas</div>
+          <ul className="divide-y divide-gray-700 flex-1 overflow-y-auto">
+            {conversations.map((c) => (
+              <li
+                key={c.id}
+                onClick={() => setSelected(c)}
+                className={`p-6 cursor-pointer hover:bg-gray-700 transition ${
+                  selected?.id === c.id ? "bg-gray-700" : ""
+                }`}
               >
-                Enviar
-              </button>
+                <div className="font-bold text-white">{c.username}</div>
+                <div className="text-sm text-gray-400 truncate mt-1">
+                  {c.lastMessage}
+                </div>
+                <div className="text-xs text-purple-400 mt-2">{c.time}</div>
+              </li>
+            ))}
+          </ul>
+        </aside>
+
+        {/* Chat Area */}
+        <section className="flex-1 bg-gray-900 rounded-r-2xl shadow-lg flex flex-col">
+          {selected ? (
+            <>
+              <div className="flex items-center justify-between p-6 border-b border-purple-500 bg-gray-900 rounded-tr-2xl">
+                <span className="font-bold text-lg text-purple-300">{selected.username}</span>
+                <span className="text-xs text-gray-400">{selected.time}</span>
+              </div>
+              <div className="flex-1 p-8 space-y-4 overflow-y-auto">
+                <div className="self-start bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-100 w-max shadow">
+                  {selected.lastMessage}
+                </div>
+                {messages.map((msg, idx) => (
+                  <div
+                    key={idx}
+                    className={`flex ${msg.fromUser ? "justify-end" : "justify-start"}`}
+                  >
+                    <div
+                      className={`${
+                        msg.fromUser
+                          ? "bg-purple-500 text-white self-end"
+                          : "bg-gray-700 text-gray-100 self-start"
+                      } px-4 py-2 rounded-lg text-sm w-max shadow`}
+                    >
+                      {msg.text}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="p-6 border-t border-purple-500 flex gap-2 bg-gray-900 rounded-br-2xl">
+                <input
+                  type="text"
+                  placeholder="Escreva uma mensagem..."
+                  className="flex-1 border border-gray-700 rounded-full px-4 py-2 text-sm focus:outline-none bg-gray-700 text-gray-100"
+                  value={input}
+                  onChange={e => setInput(e.target.value)}
+                />
+                <button
+                  className="px-6 py-2 bg-purple-500 text-white rounded-full text-sm font-bold hover:bg-purple-400 transition"
+                  onClick={() => {
+                    if (input.trim()) {
+                      setMessages([...messages, { text: input, fromUser: true }]);
+                      setInput("");
+                    }
+                  }}
+                >
+                  Enviar
+                </button>
+              </div>
+            </>
+          ) : (
+            <div className="flex-1 flex items-center justify-center text-gray-400 bg-gray-900 rounded-r-2xl">
+              <span className="text-lg">Selecione uma conversa para começar</span>
             </div>
-          </>
-        ) : (
-          <div className="flex-1 flex items-center justify-center text-gray-500 bg-gray-300">
-            Selecione uma conversa para começar
-          </div>
-        )}
-      </div>
+          )}
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="w-full bg-gray-800 text-center py-6 mt-10 text-gray-300 border-t border-purple-500">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-2">
+          <span>© 2025 NeosPassaBola. Todos os direitos reservados.</span>
+          <span className="text-xs text-purple-400">Futebol feminino é futuro!</span>
+        </div>
+      </footer>
     </div>
   );
 }
