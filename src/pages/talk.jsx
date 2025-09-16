@@ -41,8 +41,7 @@ export default function MessagesPage() {
               <path d="M15 6l-6 6 6 6" stroke="#6B21A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </Link>
-          <span className="text-3xl font-extrabold text-purple-400 tracking-tight">NeosPass</span>
-          <span className="text-xs bg-purple-400 text-white px-2 py-0.5 rounded-full ml-2">Mensagens</span>
+          <span className="text-3xl font-extrabold text-purple-400 tracking-tight justify-center flex items-center">NeosPass</span>
         </div>
       </nav>
 

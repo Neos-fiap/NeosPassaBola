@@ -43,7 +43,6 @@ export default function InstaProfile({ user = null }) {
             </svg>
           </Link>
           <span className="text-3xl font-extrabold text-purple-400 tracking-tight">NeosPass</span>
-          <span className="text-xs bg-purple-400 text-white px-2 py-0.5 rounded-full ml-2">Perfil</span>
         </div>
       </nav>
 

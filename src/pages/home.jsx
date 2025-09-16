@@ -14,7 +14,6 @@ export default function HomePage() {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <span className="text-3xl font-extrabold text-purple-400 tracking-tight">NeosPass</span>
-            <span className="text-xs bg-purple-400 text-white px-2 py-0.5 rounded-full ml-2">Beta</span>
           </div>
           {/* Search */}
           <div className="hidden md:flex flex-1 mx-8">
@@ -68,7 +67,7 @@ export default function HomePage() {
           <p className="px-6 pb-2 text-gray-100 text-base">
             Grande vitória na semi-final da copa escolinhas, rumo a final! 🚀 <span className="text-purple-400">#Gol #Final #VitoriaNaCopaEscolhinhas</span>
           </p>
-          <img src={garinhasVitoria} alt="Post" className="w-full h-72 object-cover" />
+          <img src={garinhasVitoria} alt="Post" className="w-full h-150 object-cover" />
           <div className="flex items-center justify-between px-6 py-3 border-t border-gray-700">
             <button className="text-purple-400 hover:text-purple-300 text-xl">💜</button>
             <input type="text" placeholder="Comentar..." className="flex-1 mx-4 px-4 py-2 rounded-full border border-gray-600 bg-gray-900 text-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-400" />
@@ -87,7 +86,7 @@ export default function HomePage() {
           <p className="px-6 pb-2 text-gray-100 text-base">
             Marcando o gol da vitória da copa escolinhas 🚀 <span className="text-purple-400">#Gol #RumoAFinal #GolNaSemi</span>
           </p>
-          <img src={garotinhaGolFalta} alt="Post" className="w-full h-72 object-cover" />
+          <img src={garotinhaGolFalta} alt="Post" className="w-full h-150 object-cover" />
           <div className="flex items-center justify-between px-6 py-3 border-t border-gray-700">
             <button className="text-purple-400 hover:text-purple-300 text-xl">💜</button>
             <input type="text" placeholder="Comentar..." className="flex-1 mx-4 px-4 py-2 rounded-full border border-gray-600 bg-gray-900 text-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-400" />
