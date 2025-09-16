@@ -5,6 +5,7 @@ import profiGolPerna from "../assets/profi_gol_perna.png";
 import garinhasVitoria from "../assets/garinhas_vitoria.png";
 import garotinhaGolFalta from "../assets/garotinha_gol_falta.png";
 import iconeChat from "../assets/icone_conversa.png";
+import iconeBola from "../assets/imagem_bola_icone.png"; // Adicione o ícone de bola na pasta assets
 
 export default function HomePage() {
   // Estado para os likes de cada post
@@ -49,6 +50,10 @@ export default function HomePage() {
             </Link>
             <Link to="/talk" title="Mensagens">
               <img src={iconeChat} className="h-9 w-9 rounded-full hover:scale-110 transition" alt="Mensagens" />
+            </Link>
+            {/* Ícone bola de futebol à direita da barra */}
+            <Link to="/jogos" title="Jogos">
+              <img src={iconeBola} className="h-9 w-9 rounded-full hover:scale-110 transition" alt="Jogos" />
             </Link>
           </div>
         </div>
