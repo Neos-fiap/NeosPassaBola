@@ -52,55 +52,74 @@ export default function MessagesPage() {
       </div>
 
       {/* Main - Janela de chat */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col relative">
+        {/* Seta para voltar para Home */}
+        <Link
+          to="/"
+          className="absolute top-4 left-4 bg-white rounded-full shadow p-2 hover:bg-gray-200 transition"
+          title="Voltar para Home"
+        >
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <path d="M15 6l-6 6 6 6" stroke="#6B21A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </Link>
         {selected ? (
           <>
-            <div className="p-4.5 border-b font-medium bg-gray-600">
-              {selected.username}
-            </div>
-
-           <div className="flex-1 p-4 space-y-3 overflow-y-auto bg-gray-600">
-  <div className="self-start bg-gray-400 px-3 py-2 rounded-lg text-sm w-max">
-    {selected.lastMessage}
-  </div>
-  {messages.map((msg, idx) => (
-    <div
-      key={idx}
-      className={`flex ${msg.fromUser ? "justify-end" : "justify-start"}`}
-    >
-      <div
-        className={`${
-          msg.fromUser
-            ? "bg-purple-500 text-white self-end"
-            : "bg-gray-400 self-start"
-        } px-3 py-2 rounded-lg text-sm w-max`}
-      >
-        {msg.text}
-      </div>
-    </div>
-  ))}
-</div>
-
-            <div className="p-3 border-t flex gap-2 bg-gray-600">
-  <input
-    type="text"
-    placeholder="Escreva uma mensagem..."
-    className="flex-1 border rounded-full px-4 py-2 text-sm focus:outline-none bg-gray-500"
-    value={input}
-    onChange={e => setInput(e.target.value)}
-  />
-  <button
-    className="px-4 py-2 bg-purple-500 text-white rounded-full text-sm"
-    onClick={() => {
-      if (input.trim()) {
-        setMessages([...messages, { text: input, fromUser: true }]);
-        setInput("");
-      }
-    }}
+           <div className="flex items-center justify-between p-4.5 border-b bg-gray-600">
+  <Link
+    to="/"
+    className="bg-white rounded-full shadow p-2 hover:bg-gray-200 transition"
+    title="Voltar para Home"
+    style={{ position: "relative", left: 0 }}
   >
-    Enviar
-  </button>
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <path d="M15 6l-6 6 6 6" stroke="#6B21A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  </Link>
+  <span className="font-medium text-lg text-white ml-auto">{selected.username}</span>
 </div>
+            
+            <div className="flex-1 p-4 space-y-3 overflow-y-auto bg-gray-600">
+              <div className="self-start bg-gray-400 px-3 py-2 rounded-lg text-sm w-max">
+                {selected.lastMessage}
+              </div>
+              {messages.map((msg, idx) => (
+                <div
+                  key={idx}
+                  className={`flex ${msg.fromUser ? "justify-end" : "justify-start"}`}
+                >
+                  <div
+                    className={`${
+                      msg.fromUser
+                        ? "bg-purple-500 text-white self-end"
+                        : "bg-gray-400 self-start"
+                    } px-3 py-2 rounded-lg text-sm w-max`}
+                  >
+                    {msg.text}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="p-3 border-t flex gap-2 bg-gray-600">
+              <input
+                type="text"
+                placeholder="Escreva uma mensagem..."
+                className="flex-1 border rounded-full px-4 py-2 text-sm focus:outline-none bg-gray-500"
+                value={input}
+                onChange={e => setInput(e.target.value)}
+              />
+              <button
+                className="px-4 py-2 bg-purple-500 text-white rounded-full text-sm"
+                onClick={() => {
+                  if (input.trim()) {
+                    setMessages([...messages, { text: input, fromUser: true }]);
+                    setInput("");
+                  }
+                }}
+              >
+                Enviar
+              </button>
+            </div>
           </>
         ) : (
           <div className="flex-1 flex items-center justify-center text-gray-500 bg-gray-300">
