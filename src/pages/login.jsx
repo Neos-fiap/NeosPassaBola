@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import logoPassaBola from "../assets/logo_passabola.png";
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
@@ -45,10 +46,11 @@ const LoginPage = () => {
       {/* Login Card */}
       <main className="flex-1 flex items-center justify-center pt-24 pb-10">
         <div className="bg-gray-800 p-8 rounded-2xl shadow-lg w-full max-w-md">
-          <h2 className="text-2xl font-bold text-center text-purple-300 mb-8">Entrar na NeosPass</h2>
+          <img src={logoPassaBola} alt="logo" className='bg-gray-300 rounded-full h-20 mx-auto ' />
+          <h2 className=" p-2 text-2xl font-bold text-center text-purple-300 mb-8">Entrar na NeosPass</h2>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="email" className=" block text-sm font-medium text-gray-300 mb-2">
                 Email
               </label>
               <input

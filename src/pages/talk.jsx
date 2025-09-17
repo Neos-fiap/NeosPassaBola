@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import logoPassaBola from "../assets/logo_passabola.png";
 
 export default function MessagesPage() {
   const [conversations] = useState([
@@ -120,8 +121,9 @@ export default function MessagesPage() {
               </div>
             </>
           ) : (
-            <div className="flex-1 flex items-center justify-center text-gray-400 bg-gray-900 rounded-r-2xl">
-              <span className="text-lg">Selecione uma conversa para começar</span>
+            <div className="flex-1 flex items-center justify-center text-gray-400 bg-gray-900 rounded-r-2xl flex flex-col space-y-10">
+              <img src={logoPassaBola} alt="logo" className="bg-gray-800 rounded-full h-50 w-50 space-x-10  " />
+              <span className="text-lg flex flex-col">Selecione uma conversa para começar</span>
             </div>
           )}
         </section>

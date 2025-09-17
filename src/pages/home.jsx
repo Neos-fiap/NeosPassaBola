@@ -6,6 +6,7 @@ import garinhasVitoria from "../assets/garinhas_vitoria.png";
 import garotinhaGolFalta from "../assets/garotinha_gol_falta.png";
 import iconeChat from "../assets/icone_conversa.png";
 import iconeBola from "../assets/imagem_bola_icone.png"; // Adicione o ícone de bola na pasta assets
+import logoPassaBola from "../assets/logo_passabola.png";
 
 export default function HomePage() {
   // Estado para os likes de cada post
@@ -27,6 +28,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2">
+            <img src={logoPassaBola} alt="logo_passabola" className="h-18 bg-gray-300 rounded-full bg-cover " />
             <span className="text-3xl font-extrabold text-purple-400 tracking-tight">NeosPass</span>
           </div>
           {/* Search */}

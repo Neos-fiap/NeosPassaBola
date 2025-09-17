@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import profiGolPerna from "../assets/profi_gol_perna.png";
 import rafaControleBola from "../assets/imagem_rafa_controle_bola.png";
+import logoPassaBola from "../assets/logo_passabola.png";
 
 export default function InstaProfile({ user = null }) {
   const sample = {
@@ -43,6 +44,7 @@ export default function InstaProfile({ user = null }) {
             </svg>
           </Link>
           <span className="text-3xl font-extrabold text-purple-400 tracking-tight">NeosPass</span>
+          <img src={logoPassaBola} alt="logo" className="h-16 w-16 bg-gray-300 rounded-full flex items-right" />
         </div>
       </nav>
 
