@@ -9,7 +9,7 @@ export default function InstaProfile({ user = null }) {
     username: "Rafa.Almeida8",
     avatarAlt: "Avatar de Rafa",
     bio: "Jogadora da escolinha do Sport Recife 15 Anos",
-    website: "https://example.com",
+    website: "https://www.youtube.com/watch?v=XT_Id355_I0&pp=ygUaaGlnaGxpZ2h0IGZ1dGVib2wgZmVtaW5pbm8%3D",
     posts: 128,
     followers: "24.3k",
     following: 312,
