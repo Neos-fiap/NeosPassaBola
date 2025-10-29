@@ -1,3 +1,4 @@
+// ...existing code...
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import iconeAdd from "../assets/imagem_icone_semfundo_add.png";
@@ -5,7 +6,7 @@ import profiGolPerna from "../assets/profi_gol_perna.png";
 import garinhasVitoria from "../assets/garinhas_vitoria.png";
 import garotinhaGolFalta from "../assets/garotinha_gol_falta.png";
 import iconeChat from "../assets/icone_conversa.png";
-import iconeBola from "../assets/imagem_bola_icone.png"; // Adicione o ícone de bola na pasta assets
+import iconeBola from "../assets/imagem_bola_icone.png";
 import logoPassaBola from "../assets/logo_passabola.png";
 
 export default function HomePage() {
@@ -16,21 +17,22 @@ export default function HomePage() {
   const handleLike = (index) => {
     setLikes((prev) => {
       const updated = [...prev];
-      updated[index] += 1;
+      updated[index] = (updated[index] || 0) + 1;
       return updated;
     });
   };
 
   return (
-    <div className="min-h-screen bg-gray-700 flex flex-col font-sans">
+    <div className="min-h-screen bg-gray-700 flex flex-col font-sans text-white">
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full bg-gray-800 border-b border-purple-500 shadow-lg z-50">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <img src={logoPassaBola} alt="logo_passabola" className="h-18 bg-gray-300 rounded-full bg-cover " />
+          <div className="flex items-center gap-3">
+            <img src={logoPassaBola} alt="logo_passabola" className="h-10 w-10 rounded-full object-cover bg-gray-200" />
             <span className="text-3xl font-extrabold text-purple-400 tracking-tight">NeosPass</span>
           </div>
+
           {/* Search */}
           <div className="hidden md:flex flex-1 mx-8">
             <input
@@ -39,21 +41,16 @@ export default function HomePage() {
               className="w-full bg-gray-900 text-gray-100 rounded-lg px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-purple-400 transition"
             />
           </div>
+
           {/* Menu */}
           <div className="flex items-center gap-6">
-            <Link
-              to="/login"
-              className="font-bold text-purple-400 hover:text-purple-300 transition"
-            >
-              Conecte-se
-            </Link>
+            <Link to="/login" className="font-bold text-purple-400 hover:text-purple-300 transition">Conecte-se</Link>
             <Link to="/perfil" title="Perfil">
               <img src={iconeAdd} className="h-9 w-9 rounded-full hover:scale-110 transition" alt="Perfil" />
             </Link>
             <Link to="/talk" title="Mensagens">
               <img src={iconeChat} className="h-9 w-9 rounded-full hover:scale-110 transition" alt="Mensagens" />
             </Link>
-            {/* Ícone bola de futebol à direita da barra */}
             <Link to="/jogos" title="Jogos">
               <img src={iconeBola} className="h-9 w-9 rounded-full hover:scale-110 transition" alt="Jogos" />
             </Link>
@@ -65,10 +62,7 @@ export default function HomePage() {
       <section className="pt-24 pb-10 bg-gradient-to-r from-purple-900 via-gray-700 to-gray-800 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold text-purple-300 mb-2 drop-shadow-lg">Bem-vindo ao NeosPass</h1>
         <p className="text-lg md:text-xl text-gray-200 mb-6">A rede social para talentos do futebol feminino!</p>
-        <Link
-          to="/login"
-          className="inline-block bg-purple-500 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:bg-purple-400 transition"
-        >
+        <Link to="/login" className="inline-block bg-purple-500 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:bg-purple-400 transition">
           Comece agora
         </Link>
       </section>
@@ -87,7 +81,7 @@ export default function HomePage() {
           <p className="px-6 pb-2 text-gray-100 text-base">
             Grande vitória na semi-final da copa escolinhas, rumo a final! 🚀 <span className="text-purple-400">#Gol #Final #VitoriaNaCopaEscolhinhas</span>
           </p>
-          <img src={garinhasVitoria} alt="Post" className="w-full h-150 object-cover" />
+          <img src={garinhasVitoria} alt="Post" className="w-full h-60 object-cover" />
           <div className="flex items-center justify-between px-6 py-3 border-t border-gray-700">
             <button
               className="flex items-center gap-2 text-purple-400 hover:text-purple-300 text-xl"
@@ -99,6 +93,7 @@ export default function HomePage() {
             <button className="text-purple-400 hover:text-purple-300 text-xl">🔗</button>
           </div>
         </div>
+
         {/* Post 2 */}
         <div className="bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
           <div className="flex items-center gap-4 px-6 py-4">
@@ -111,7 +106,7 @@ export default function HomePage() {
           <p className="px-6 pb-2 text-gray-100 text-base">
             Marcando o gol da vitória da copa escolinhas 🚀 <span className="text-purple-400">#Gol #RumoAFinal #GolNaSemi</span>
           </p>
-          <img src={garotinhaGolFalta} alt="Post" className="w-full h-150 object-cover" />
+          <img src={garotinhaGolFalta} alt="Post" className="w-full h-60 object-cover" />
           <div className="flex items-center justify-between px-6 py-3 border-t border-gray-700">
             <button
               className="flex items-center gap-2 text-purple-400 hover:text-purple-300 text-xl"
@@ -125,8 +120,18 @@ export default function HomePage() {
         </div>
       </main>
 
+      {/* CTA final - leva ao formulário */}
+      <section className="max-w-4xl mx-auto px-4 py-10 text-center">
+        <p className="text-gray-300 mb-4">
+          Quer participar, enviar uma proposta ou se inscrever em programas de formação? Conte-nos sua ideia.
+        </p>
+        <Link to="/formulario" className="inline-block bg-purple-500 text-white px-6 py-3 rounded-full font-bold hover:bg-purple-400 transition">
+          Ir para formulário
+        </Link>
+      </section>
+
       {/* Footer */}
-      <footer className="w-full bg-gray-800 text-center py-6 mt-10 text-gray-300 border-t border-purple-500">
+      <footer className="w-full bg-gray-800 text-center py-6 mt-6 text-gray-300 border-t border-purple-500">
         <div className="flex flex-col md:flex-row items-center justify-center gap-2">
           <span>© 2025 NeosPassaBola. Todos os direitos reservados.</span>
           <span className="text-xs text-purple-400">Futebol feminino é futuro!</span>
@@ -135,3 +140,4 @@ export default function HomePage() {
     </div>
   );
 }
+// ...existing code...
