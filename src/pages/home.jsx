@@ -126,7 +126,7 @@ export default function HomePage() {
         <p className="text-gray-300 mb-4">
           Quer participar, enviar uma proposta ou se inscrever em programas de formação? Conte-nos sua ideia.
         </p>
-        <Link to="/formulario"  className="inline-block bg-purple-500 text-white px-6 py-3 rounded-full font-bold hover:bg-purple-400 transition">
+        <Link to="/formulario" className="inline-block bg-purple-500 text-white px-6 py-3 rounded-full font-bold hover:bg-purple-400 transition">
           Ir para formulário
         </Link>
       </section>
