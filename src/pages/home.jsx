@@ -131,6 +131,16 @@ export default function HomePage() {
         </Link>
       </section>
 
+      {/* Estatísticas - botão flutuante bonito e localizado */}
+      <Link
+        to="/dashboard"
+        title="Estatísticas"
+        className="fixed bottom-8 right-8 z-50 flex items-center gap-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-3 rounded-full shadow-xl hover:scale-105 transition transform"
+      >
+        <span className="text-xl">📊</span>
+        <span className="font-semibold">Estatísticas</span>
+      </Link>
+
       {/* Footer */}
       <footer className="w-full bg-gray-800 text-center py-6 mt-6 text-gray-300 border-t border-purple-500">
         <div className="flex flex-col md:flex-row items-center justify-center gap-2">
