@@ -5,6 +5,7 @@ import InstaProfile from "./pages/perfil";
 import MessagesPage from "./pages/talk";
 import JogosFem from "./pages/Jogos";
 import Formulario from "./pages/formulario"; // <-- maiúscula aqui
+import Dashboard from "./pages/dashboard";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/talk" element={<MessagesPage />} />
         <Route path="/jogos" element={<JogosFem />} />
         <Route path="/formulario" element={<Formulario />} /> {/* <-- use a tag com maiúscula */}
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );
